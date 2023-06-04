@@ -11,6 +11,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
+// » IMPORT CSS STYLES
+import './styles/reset.css';
+import './styles/styles.css';
+
 // » IMPORT APP COMPONENT
 import App from './App';
 
