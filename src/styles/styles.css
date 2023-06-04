@@ -138,3 +138,123 @@ kbd {
   flex-flow: column nowrap;
   justify-content: space-between;
 }
+
+/* ━━ CONTENTS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.main-content {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 30px;
+}
+
+.aside-content {
+  display: flex;
+  width: 120px;
+  flex: 0 0 auto;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+
+.drags-content {
+	display: flex;
+	width: 400px;
+	height: 300px;
+	flex: 1 0 auto;
+	flex-flow: column nowrap;
+	justify-content: end;
+	gap: 20px;
+}
+
+/* ━━ BEM ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+/* » COMPONENT: app-header */
+.app-header {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.app-header__title,
+.app-header__subtitle {
+  height: 110px;
+  margin: 0;
+  font-size: 80px;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.app-header__subtitle {
+  font-size: 48px;
+}
+
+
+.app-header__subtitle--accent {
+  color: var(--color-default);
+}
+
+/* » COMPONENT: event-title */
+.event-title {
+  padding: 5px 10px;
+  margin: 0;
+  font-weight: bolder;
+}
+
+/* » COMPONENT: event-list */
+.event-list {
+  display: flex;
+  height: 240px;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.event-list__item {
+  padding: 5px 10px;
+}
+
+.event-list__item--active {
+  background-color: var(--color-default);
+  color: #FFFFFF;
+}
+
+/* » COMPONENT: drag-source */
+.drag-source {
+  height: 45px;
+  padding: 10px;
+  background-color: #444444;
+  color: #FFFFFF;
+  cursor: move;
+}
+
+.drag-source--dragging {
+  opacity: 0.5;
+}
+
+/* » COMPONENT: drop-area */
+.drop-area {
+  height: 140PX;
+  padding: 20px;
+  border: 2px dashed #888888;
+  background-color: #555555;
+}
+
+.drop-area--drag-over {
+  border-color: #FFFFFF;
+}
+
+/* » COMPONENT: drag-information */
+.drag-information {
+	display: flex;
+	flex-flow: column nowrap;
+	padding: 10px 0;
+	color: #FFFFFF;
+	gap: 10px;
+}
+
+.drag-information__status,
+.drag-information__data {
+	font-weight: bold;
+	text-align: right;
+}
