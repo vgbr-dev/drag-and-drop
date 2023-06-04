@@ -7,6 +7,10 @@
 // » IMPORT REACT MODULES
 import React from 'react';
 
+// » IMPORT COMPONENTS
+import DragAndDrop from './components/DragAndDrop';
+import Header from './components/Header';
+
 // ━━ COMPONENT ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
  * The `App` component, the main component where the entire `react` application
@@ -16,9 +20,10 @@ import React from 'react';
  * @returns {JSX.Element} The rendered component.
  */
 const App = () => (
-  <header>
-    <h1>Hello world</h1>
-  </header>
+  <React.Fragment key="App">
+    <Header />
+    <DragAndDrop />
+  </React.Fragment>
 );
 
 // ━━ EXPORT MODULE ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
