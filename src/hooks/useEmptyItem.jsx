@@ -48,7 +48,7 @@ import { useState } from 'react';
  * An object with The state and functions for managing of component.
  *
  * @typedef  {object}          EmptyItemHook
- * @property {boolean}         isDraggingOver  - The number of tasks that have not started.
+ * @property {boolean}         isDraggingOver  - indicates if the dragover event is happening.
  * @property {HandleDragStart} handleDragStart - Handles the drag start event in the component.
  * @property {HandleDragOver}  handleDragOver  - Handles the drag over event in the component.
  * @property {HandleDragLeave} handleDragLeave - Handles the drag leave event in the component.
