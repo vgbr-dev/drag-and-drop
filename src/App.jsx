@@ -7,9 +7,13 @@
 // » IMPORT REACT MODULES
 import React from 'react';
 
+// » IMPORT PROVIDERS
+import TasksProvider from './providers/TasksProvider';
+
 // » IMPORT COMPONENTS
-import DragAndDrop from './components/DragAndDrop';
 import Header from './components/Header';
+import Aside from './components/Aside';
+import Main from './components/Main';
 
 // ━━ COMPONENT ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
@@ -20,10 +24,13 @@ import Header from './components/Header';
  * @returns {JSX.Element} The rendered component.
  */
 const App = () => (
-  <React.Fragment key="App">
-    <Header />
-    <DragAndDrop />
-  </React.Fragment>
+  <TasksProvider>
+    <div className="app">
+      <Header />
+      <Aside />
+      <Main />
+    </div>
+  </TasksProvider>
 );
 
 // ━━ EXPORT MODULE ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
