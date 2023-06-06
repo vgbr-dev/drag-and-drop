@@ -217,12 +217,12 @@ const TasksProvider = ({ children }) => {
    * @param {Status} statusTarget - The new status of the task.
    * @returns {void}
    */
-  const updateTaskDone = useCallback(
-    (taskId, doneTarget) => {
+  const updateTaskStatus = useCallback(
+    (taskId, statusTarget) => {
       const foundTask = state.tasks.find(task => task.id === taskId);
 
-      if (foundTask && foundTask.done !== doneTarget) {
-        dispatch(actions.UPDATE_TASK_DONE(taskId, doneTarget));
+      if (foundTask && foundTask.status !== statusTarget) {
+        dispatch(actions.UPDATE_TASK_STATUS(taskId, statusTarget));
       }
     },
     [state.tasks],
@@ -237,7 +237,7 @@ const TasksProvider = ({ children }) => {
       updateTask,
       selectTask,
       deselectTask,
-      updateTaskDone,
+      updateTaskStatus,
     }),
     [
       state.tasks,
@@ -247,7 +247,7 @@ const TasksProvider = ({ children }) => {
       updateTask,
       selectTask,
       deselectTask,
-      updateTaskDone,
+      updateTaskStatus,
     ],
   );
 
