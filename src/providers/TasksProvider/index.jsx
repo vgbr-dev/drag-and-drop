@@ -89,9 +89,9 @@ import reducer from './reducer';
  */
 
 /**
- * Function for updating the done status of a task.
+ * Function for updating the status of a task.
  *
- * @typedef {(taskId: string, targetDone: boolean) => void} UpdateTaskDone
+ * @typedef {(taskId: string, targetStatus: Status) => void} UpdateTaskStatus
  */
 
 /**
@@ -113,7 +113,7 @@ import reducer from './reducer';
  * @property {UpdateTask}       updateTask        - Function for updating a task.
  * @property {SelectTask}       selectTask        - Function for selecting a task.
  * @property {DeselectTask}     deselectTask      - Function for deselecting a task.
- * @property {UpdateTaskDone}   updateTaskDone    - Function for updating the done status of a task.
+ * @property {UpdateTaskStatus} updateTaskStatus  - Function for updating the status of a task.
  */
 
 // ━━ CONSTANTS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -211,10 +211,10 @@ const TasksProvider = ({ children }) => {
   }, []);
 
   /**
-   * Updates the done status of a task.
+   * Updates the status of a task.
    *
    * @param {string} taskId - The ID of the task to update.
-   * @param {boolean} doneTarget - The new done status of the task.
+   * @param {Status} statusTarget - The new status of the task.
    * @returns {void}
    */
   const updateTaskDone = useCallback(
