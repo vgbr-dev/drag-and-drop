@@ -16,8 +16,8 @@ import TaskList from './TaskLists';
  */
 const TaskGroups = () => (
   <section className="task-groups">
-    <TaskList done title="Completed Tasks" />
-    <TaskList done={false} title="Pending Tasks" />
+    <TaskList status="completed" title="Completed Tasks" />
+    <TaskList status="not_started" title="Pending Tasks" />
   </section>
 );
 
