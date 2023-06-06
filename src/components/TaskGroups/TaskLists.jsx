@@ -16,26 +16,9 @@ import TaskItem from './TaskItem';
 
 // ━━ TYPE DEFINITIONS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
- * The importance level of a task.
+ * The stage of completion for a task.
  *
- * @typedef {"low"|"normal"|"high"} Importance
- */
-
-/**
- * Represents a task.
- *
- * @typedef  {object}     Task
- * @property {string}     id         - The ID of the task.
- * @property {string}     title      - The title of the task.
- * @property {string}     category   - The category of the task.
- * @property {Importance} importance - The importance level of the task.
- * @property {boolean}    done       - Indicates whether the task is done or not.
- */
-
-/**
- * Represents an array of tasks.
- *
- * @typedef {Array<Task>} Tasks
+ * @typedef {"not_started"|"in_progress"|"completed"|"waiting_on_others"|"deferred"} Status
  */
 
 // ━━ COMPONENT ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -44,7 +27,8 @@ import TaskItem from './TaskItem';
  *
  * @component
  * @param {object} props - The component properties.
- * @param {Tasks} props.tasks -  The task object.
+ * @param {Status} props.status -  The task object.
+ * @param {string} props.title -  The title of the task group.
  * @returns {JSX.Element} The rendered component.
  */
 const TaskLists = ({ done, title }) => {
