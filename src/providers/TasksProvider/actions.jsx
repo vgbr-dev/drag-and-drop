@@ -132,9 +132,9 @@ const DESELECT_TASK = () => ({
  * @param {Status} statusTarget - The target status of the task.
  * @returns {UpdateTaskStatusAction} The action to update the status of a task.
  */
-const UPDATE_TASK_DONE = (taskId, doneTarget) => ({
-  type: types.UPDATE_TASK_DONE,
-  payload: { taskId, doneTarget },
+const UPDATE_TASK_STATUS = (taskId, statusTarget) => ({
+  type: types.UPDATE_TASK_STATUS,
+  payload: { taskId, statusTarget },
 });
 
 // ━━ EXPORT MODULE ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
