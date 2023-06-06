@@ -35,10 +35,13 @@ import useTasksConsumer from './useTasksConsumer';
  * The statistics of the tasks.
  *
  * @typedef  {object} TaskStats
- * @property {number} not_started - The number of tasks that have not started.
- * @property {number} completed   - The number of tasks that are completed.
- * @property {number} progress    - The progress percentage of completed tasks.
- * @property {number} total       - The total number of tasks.
+ * @property {number} not_started       - The number of tasks that have not started.
+ * @property {number} in_progress       - The number of tasks that are in progress.
+ * @property {number} completed         - The number of tasks that are completed.
+ * @property {number} waiting_on_others - The number of tasks that are waiting on others.
+ * @property {number} deferred          - The number of tasks that are deferred.
+ * @property {number} progress          - The progress percentage of completed tasks.
+ * @property {number} total             - The total number of tasks.
  */
 
 // ━━ CUSTOM HOOK ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
