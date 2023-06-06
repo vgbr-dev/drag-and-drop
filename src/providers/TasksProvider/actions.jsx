@@ -9,7 +9,14 @@ import * as types from './types';
 
 // ━━ TYPE DEFINITIONS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
- * Represents an action to create a new task.
+ * The stage of completion for a task.
+ *
+ * @typedef  {import('.').Status} Status
+ */
+
+/**
+ * Represents a task with its associated properties such as ID, title, category,
+ * importance, and status.
  *
  * @typedef  {import('.').Task} Task
  */
@@ -55,11 +62,11 @@ import * as types from './types';
  */
 
 /**
- * Represents an action to update the done status of a task.
+ * Represents an action to update the status of a task.
  *
- * @typedef  {Object} UpdateTaskDoneAction
+ * @typedef  {Object} UpdateTaskStatusAction
  * @property {string} type                 - The type of the action.
- * @property {Object} payload              - The payload of the action containing the ID of the task and the target done status.
+ * @property {Object} payload              - The payload of the action containing the ID of the task and the target status.
  */
 
 // ━━ MODULE ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -119,11 +126,11 @@ const DESELECT_TASK = () => ({
 });
 
 /**
- * Creates an action to update the done status of a task.
+ * Creates an action to update the status of a task.
  *
  * @param {string} taskId - The ID of the task to update.
- * @param {boolean} doneTarget - The target done status of the task.
- * @returns {UpdateTaskDoneAction} The action to update the done status of a task.
+ * @param {Status} statusTarget - The target status of the task.
+ * @returns {UpdateTaskStatusAction} The action to update the status of a task.
  */
 const UPDATE_TASK_DONE = (taskId, doneTarget) => ({
   type: types.UPDATE_TASK_DONE,
