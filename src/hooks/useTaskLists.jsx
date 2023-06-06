@@ -8,7 +8,7 @@
 import { useEffect, useState } from 'react';
 
 // » IMPORT HOOKS
-import useTasksByDone from './useTasksByDone';
+import useTasksByStatus from './useTasksByStatus';
 
 // ━━ TYPE DEFINITIONS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
@@ -83,13 +83,13 @@ import useTasksByDone from './useTasksByDone';
  * @param {boolean} done - The done status of the tasks to filter.
  * @returns {TaskListsHook} - An object with The state and functions for managing of component.
  */
-const useTaskLists = done => {
-  const { tasks, updateTaskDone } = useTasksByDone(done);
+const useTaskLists = status => {
+  const { tasks, updateTaskStatus } = useTasksByStatus(status);
   const [items, setItems] = useState([]);
 
   useEffect(() => {
     setItems(tasks);
-  }, [tasks, done]);
+  }, [tasks, status]);
 
   /**
    * Handles the drag start event in the component.
@@ -121,7 +121,7 @@ const useTaskLists = done => {
     const draggedItemId = event.dataTransfer.getData('text/plain');
     const taskExists = tasks.some(item => item.id === draggedItemId);
     if (!taskExists) {
-      updateTaskDone(draggedItemId, done);
+      updateTaskStatus(draggedItemId, status);
       return;
     }
 
