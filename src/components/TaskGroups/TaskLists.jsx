@@ -31,8 +31,8 @@ import TaskItem from './TaskItem';
  * @param {string} props.title -  The title of the task group.
  * @returns {JSX.Element} The rendered component.
  */
-const TaskLists = ({ done, title }) => {
-  const { tasks, handleDragStart, handleDragOver, handleDrop } = useTaskLists(done);
+const TaskLists = ({ status, title }) => {
+  const { tasks, handleDragStart, handleDragOver, handleDrop } = useTaskLists(status);
 
   return (
     <article className="task-group">
@@ -57,7 +57,7 @@ const TaskLists = ({ done, title }) => {
 };
 
 TaskLists.propTypes = {
-  done: PropTypes.bool.isRequired,
+  status: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
 };
 
