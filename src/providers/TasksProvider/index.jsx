@@ -20,24 +20,31 @@ import reducer from './reducer';
 
 // ━━ TYPE DEFINITIONS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
- * The importance level of a task.
+ * The level of importance for a task.
  *
  * @typedef {"low"|"normal"|"high"} Importance
  */
 
 /**
- * Represents a task.
+ * The stage of completion for a task.
  *
- * @typedef  {object}     Task
+ * @typedef {"not_started"|"in_progress"|"completed"|"waiting_on_others"|"deferred"} Status
+ */
+
+/**
+ * Represents a task with its associated properties such as ID, title, category,
+ * importance, and status.
+ *
+ * @typedef {Object}      Task
  * @property {string}     id         - The ID of the task.
  * @property {string}     title      - The title of the task.
  * @property {string}     category   - The category of the task.
  * @property {Importance} importance - The importance level of the task.
- * @property {boolean}    done       - Indicates whether the task is done or not.
+ * @property {Status}     status     - The status of the task.
  */
 
 /**
- * Represents an array of tasks.
+ * Defines a collection of tasks with their associated properties.
  *
  * @typedef {Array<Task>} Tasks
  */
