@@ -192,7 +192,7 @@ TaskItem.propTypes = {
     title: PropTypes.string.isRequired,
     importance: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
-    done: PropTypes.bool.isRequired,
+    status: PropTypes.string.isRequired,
   }).isRequired,
   onDragStart: PropTypes.func.isRequired,
   onDragOver: PropTypes.func.isRequired,
