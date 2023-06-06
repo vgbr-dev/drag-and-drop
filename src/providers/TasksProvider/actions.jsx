@@ -143,4 +143,4 @@ export { DELETE_TASK };
 export { UPDATE_TASK };
 export { SELECT_TASK };
 export { DESELECT_TASK };
-export { UPDATE_TASK_DONE };
+export { UPDATE_TASK_STATUS };
