@@ -55,14 +55,14 @@ const reducer = (state, action) => {
       return { ...state, selectedTask: payload };
     case types.DESELECT_TASK:
       return { ...state, selectedTask: null };
-    case types.UPDATE_TASK_DONE:
+    case types.UPDATE_TASK_STATUS:
       return {
         ...state,
         tasks: state.tasks.map(task => {
-          if (task.id === payload.taskId && task.done !== payload.doneTarget) {
+          if (task.id === payload.taskId && task.status !== payload.statusTarget) {
             return {
               ...task,
-              done: payload.doneTarget,
+              status: payload.statusTarget,
             };
           }
           return task;
