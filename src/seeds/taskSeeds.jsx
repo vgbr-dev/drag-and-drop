@@ -36,7 +36,7 @@
 
 // ━━ MODULE ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
- * Array of test tasks.
+ * Array of tasks.
  *
  * @type {Tasks}
  */
