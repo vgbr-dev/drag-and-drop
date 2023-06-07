@@ -52,15 +52,21 @@ import useTasksConsumer from './useTasksConsumer';
  * @returns {TaskStats} - The task statistics.
  */
 const calculateTaskStats = tasks => {
-  const stats = {
+  const statsMap = {
     not_started: 0,
+    in_progress: 0,
     completed: 0,
+    waiting_on_others: 0,
+    deferred: 0,
     progress: 0,
     total: tasks.length,
   };
 
-  stats.not_started = tasks.filter(task => task.done === false).length;
-  stats.completed = tasks.filter(task => task.done === true).length;
+  const stats = tasks.reduce((acc, { status }) => {
+    acc[status] += 1;
+    return acc;
+  }, statsMap);
+
   stats.progress = Math.round((stats.completed / stats.total) * 100) || 0;
 
   return stats;
@@ -78,7 +84,10 @@ const useTaskStats = () => {
   const { tasks } = useTasksConsumer();
   const [taskStats, setTaskStats] = useState(() => ({
     not_started: 0,
+    in_progress: 0,
     completed: 0,
+    waiting_on_others: 0,
+    deferred: 0,
     progress: 0,
     total: tasks.length,
   }));
