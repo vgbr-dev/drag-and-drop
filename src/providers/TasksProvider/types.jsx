@@ -33,8 +33,8 @@ export const UPDATE_TASK = 'UPDATE_TASK';
 export const SELECT_TASK = 'SELECT_TASK';
 
 /**
- * Action to update task.done by id.
+ * Action to update task.status by id.
  *
  * @type {string}
  */
-export const UPDATE_TASK_DONE = 'UPDATE_TASK_DONE';
+export const UPDATE_TASK_STATUS = 'UPDATE_TASK_STATUS';
